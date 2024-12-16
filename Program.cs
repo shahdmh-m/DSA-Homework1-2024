@@ -1,4 +1,5 @@
-﻿using DSA_Homework1.HomeworkClasses;
+﻿using DSA_Homework1;
+using DSA_Homework1.HomeworkClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace DSA_Homework1
             Console.WriteLine("Binary code:\t" + (new Converter()).DecimalToBinary(num));
 
 
-            Console.WriteLine("=============================================");
+            Console.WriteLine("============================================");
 
 
             var searcher = new Searcher();
@@ -24,11 +25,16 @@ namespace DSA_Homework1
             Console.Write("Searching array:\t");
             foreach (var item in array)
             {
-                Console.Write(item);
+                Console.Write(item + " ");
             }
             Console.WriteLine();
             int result = searcher.TernarySearch(array, 1, 0, array.Length);
-            Console.WriteLine("Element Found at "+result);
+            if (result != -1) { Console.WriteLine("Element Found at " + result); }
+            else
+            {
+                Console.WriteLine("Element not found in the array.");
+            }
         }
     }
+
 }
